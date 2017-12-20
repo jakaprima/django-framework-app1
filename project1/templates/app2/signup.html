@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sign up</title>
+</head>
+<body>
+	<div class="container">
+		<h1>mohon daftar disini</h1>
+		<form method="POST">
+			{{ form.as_p }} {# each as paragraf #}
+			{% csrf_token %}
+			<input type="submit" class="btn btn-primary" value="submit">
+		</form>
+	</div>
+
+</body>
+</html>

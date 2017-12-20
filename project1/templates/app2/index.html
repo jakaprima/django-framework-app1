@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>view pake templates</title>
+	<link rel="stylesheet" href="{% static "css/css1.css" %}" />
+
+</head>
+<body>
+	<h1>halo ini adalah index.html</h1>
+	<h2>dengan css</h2>
+	<img src="{% static "images/python.png" %}" alt="python logo" />
+	{# dari database ke view abis tu ke template #}
+	<div class="djangtwo">
+		{% if access_records %}
+		<table>
+			<thead>
+				<th>nama website</th>
+				<th>data akses</th>
+			</thead>
+			{% for acc in access_records %}
+				<tr>
+					<td>{{ acc.name }}</td>
+					<td>{{ acc.date }}</td>
+				</tr>
+			{% endfor  %}
+		</table>
+		{% else %}
+			<p>tidak ada akses record</p>
+		{% endif %}
+	</div>
+	{# {{ key }}  #}
+	{# masukkin url dictionaries ke html #}
+
+</body>
+</html>
